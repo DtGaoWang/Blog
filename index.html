@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人博客</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>我的个人博客</h1>
+            <p class="subtitle">分享生活 · 记录成长</p>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="about">个人简介</button>
+            <button class="tab-btn" data-tab="categories">博客分类</button>
+        </nav>
+
+        <main class="main-content">
+            <section id="about" class="tab-content active">
+                <div class="about-section">
+                    <h2>关于我</h2>
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <span class="avatar-placeholder">👤</span>
+                        </div>
+                        <div class="profile-info">
+                            <div class="form-group">
+                                <label>姓名</label>
+                                <input type="text" id="userName" class="input-field" placeholder="输入您的姓名">
+                            </div>
+                            <div class="form-group">
+                                <label>职业</label>
+                                <input type="text" id="userJob" class="input-field" placeholder="输入您的职业">
+                            </div>
+                            <div class="form-group">
+                                <label>个人简介</label>
+                                <textarea id="userBio" class="textarea-field" placeholder="介绍一下自己..."></textarea>
+                            </div>
+                            <button class="btn btn-primary" id="saveProfile">保存信息</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="categories" class="tab-content">
+                <div class="categories-section">
+                    <div class="section-header">
+                        <h2>博客分类</h2>
+                        <button class="btn btn-primary" id="addCategoryBtn">添加分类</button>
+                    </div>
+
+                    <div id="addCategoryForm" class="form-card hidden">
+                        <h3>新建分类</h3>
+                        <div class="form-group">
+                            <label>分类名称</label>
+                            <input type="text" id="categoryName" class="input-field" placeholder="例如：技术分享、生活随笔">
+                        </div>
+                        <div class="form-group">
+                            <label>分类描述</label>
+                            <textarea id="categoryDesc" class="textarea-field" placeholder="描述这个分类的内容..."></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button class="btn btn-primary" id="saveCategoryBtn">保存</button>
+                            <button class="btn btn-secondary" id="cancelCategoryBtn">取消</button>
+                        </div>
+                    </div>
+
+                    <div class="categories-grid" id="categoriesList">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 我的个人博客 · 用心记录每一天</p>
+        </footer>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>编辑分类</h3>
+            <div class="form-group">
+                <label>分类名称</label>
+                <input type="text" id="editCategoryName" class="input-field">
+            </div>
+            <div class="form-group">
+                <label>分类描述</label>
+                <textarea id="editCategoryDesc" class="textarea-field"></textarea>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-primary" id="updateCategoryBtn">更新</button>
+                <button class="btn btn-secondary" id="closeModalBtn">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
