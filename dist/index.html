@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人博客</title>
+  <script type="module" crossorigin src="/assets/index-C3eUZO_z.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D4NOPQyc.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">我的博客</h1>
+                <button class="btn-logout" id="logoutBtn">退出</button>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <aside class="sidebar">
+                <div class="profile-section">
+                    <div class="profile-wrapper">
+                        <div class="profile-image-container">
+                            <img id="profileImage" class="profile-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='100' r='100' fill='%234A90E2'/%3E%3Ctext x='100' y='100' font-size='80' fill='white' text-anchor='middle' dy='.3em'%3E%F0%9F%91%A4%3C/text%3E%3C/svg%3E" alt="头像">
+                            <input type="file" id="imageUpload" class="image-upload-input" accept="image/*">
+                            <label for="imageUpload" class="image-upload-label">上传图片</label>
+                        </div>
+                    </div>
+
+                    <div class="profile-info">
+                        <div class="info-item">
+                            <label>姓名</label>
+                            <input type="text" id="userName" class="info-input" placeholder="输入姓名">
+                        </div>
+                        <div class="info-item">
+                            <label>职位</label>
+                            <input type="text" id="userPosition" class="info-input" placeholder="输入职位">
+                        </div>
+                        <div class="info-item">
+                            <label>公司</label>
+                            <input type="text" id="userCompany" class="info-input" placeholder="输入公司">
+                        </div>
+                        <div class="info-item">
+                            <label>简介</label>
+                            <textarea id="userBio" class="info-textarea" placeholder="介绍一下自己"></textarea>
+                        </div>
+                        <button class="btn btn-primary" id="saveProfileBtn">保存信息</button>
+                    </div>
+                </div>
+
+                <div class="categories-section">
+                    <div class="section-header">
+                        <h3>文章分类</h3>
+                        <button class="btn-add" id="addCategoryBtn">+</button>
+                    </div>
+                    <div id="categoriesList" class="categories-list">
+                    </div>
+                </div>
+
+                <div id="addCategoryForm" class="add-category-form hidden">
+                    <input type="text" id="categoryName" class="form-input" placeholder="分类名称">
+                    <textarea id="categoryDesc" class="form-textarea" placeholder="分类描述"></textarea>
+                    <div class="form-actions">
+                        <button class="btn btn-primary" id="saveCategoryBtn">保存</button>
+                        <button class="btn btn-secondary" id="cancelCategoryBtn">取消</button>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="content">
+                <div class="articles-header">
+                    <h2>最近的文章</h2>
+                    <button class="btn btn-primary" id="addArticleBtn">发布文章</button>
+                </div>
+
+                <div id="addArticleForm" class="article-form hidden">
+                    <div class="form-group">
+                        <label>选择分类</label>
+                        <select id="articleCategory" class="form-input">
+                            <option value="">选择一个分类</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>文章标题</label>
+                        <input type="text" id="articleTitle" class="form-input" placeholder="输入文章标题">
+                    </div>
+                    <div class="form-group">
+                        <label>文章概要</label>
+                        <textarea id="articleSummary" class="form-textarea" placeholder="输入文章概要"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>完整内容</label>
+                        <textarea id="articleContent" class="form-textarea article-content-textarea" placeholder="输入文章完整内容"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-primary" id="saveArticleBtn">发布</button>
+                        <button class="btn btn-secondary" id="cancelArticleBtn">取消</button>
+                    </div>
+                </div>
+
+                <div id="articlesList" class="articles-list">
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <h3 id="modalTitle">编辑分类</h3>
+            <div class="form-group">
+                <label>分类名称</label>
+                <input type="text" id="editCategoryName" class="form-input">
+            </div>
+            <div class="form-group">
+                <label>分类描述</label>
+                <textarea id="editCategoryDesc" class="form-textarea"></textarea>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-primary" id="updateCategoryBtn">更新</button>
+                <button class="btn btn-secondary" id="closeModalBtn2">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="articleModal" class="modal hidden">
+        <div class="modal-content article-modal-content">
+            <button class="modal-close" id="closeArticleModalBtn">&times;</button>
+            <h3 id="articleModalTitle">文章详情</h3>
+            <div id="articleModalBody" class="article-modal-body">
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-edit" id="editArticleBtn">编辑</button>
+                <button class="btn btn-delete" id="deleteArticleBtn">删除</button>
+                <button class="btn btn-secondary" id="closeArticleModalBtn2">关闭</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
